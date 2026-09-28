@@ -1,15 +1,15 @@
-# Project for Today
+# Project Description
 
 You will work with the [King County Jupyter notebook](./King-County.ipynb), which already contains exploratory data analysis, data cleaning, feature engineering, and several Machine Learning models.
 
 The main focus of this project is the refactoring of the data cleaning and feature engineering workflow. The modeling section stays in the notebook so you can see how those transformed features are used later in a full Machine Learning workflow.
 
-## Main tasks
+## Main Tasks
 
 - Refactor the data cleaning and feature engineering code into Python files.
 - Build a reusable pipeline for data cleaning and feature engineering.
 
-### Stretch tasks
+### Stretch Tasks
 
 - Refactor the modeling step as well, or extend your pipeline so it also supports the training workflow.
 - Build a FastAPI app that supports Create, Read, Update and Delete operations for houses stored in a database, using 5 features.
