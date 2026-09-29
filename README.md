@@ -86,7 +86,7 @@ uv sync
 
 ---
 
-### 5. Open the Notebook
+### 5. Open the Repository in VS Code
 
 > [!NOTE]
 > Make sure you open VS Code from the project root so it automatically detects the environment created by `uv sync`.
