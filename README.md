@@ -24,7 +24,7 @@ By the end of this repository, you should be able to:
 | File / Folder | Description |
 |---|---|
 | [**data**](data/) | The King County house price dataset used by the notebook. |
-| [**assets**](assets/) | Visual aids referenced in the notebook. |
+| [**assets**](assets/) | Visual aids referenced in the repository. |
 | [**bonus_solution**](bonus_solution/) | A FastAPI + Postgres + Docker reference implementation for the optional CRUD stretch goal. |
 | [**pyproject.toml**](pyproject.toml) | Project configuration and dependencies. |
 | [**uv.lock**](uv.lock) | Dependency lock file. |
