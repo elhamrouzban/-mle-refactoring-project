@@ -16,7 +16,7 @@ By the end of this repository, you should be able to:
 
 | File / Folder | Description |
 |---|---|
-| [**Project Brief**](project-for-today.md) | The assignment tasks and stretch goals. |
+| [**Project Description**](project-description.md) | The assignment tasks and stretch goals. |
 | [**King County Notebook**](King-County.ipynb) | The original notebook: EDA, cleaning, feature engineering, and modeling for King County house prices. |
 
 ### Additional Folders and Files
@@ -101,7 +101,7 @@ Then open [King-County.ipynb](King-County.ipynb) and select the Python environme
 
 ## How to Use This Repo
 
-1. Read the assignment brief in [project-for-today.md](project-for-today.md).
+1. Read the assignment brief in [project-description.md](project-description.md).
 2. Work through the notebook in [King-County.ipynb](King-County.ipynb).
 3. Refactor the cleaning and feature engineering logic into Python files.
 4. Build a reusable pipeline.
