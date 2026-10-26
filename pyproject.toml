@@ -1,7 +1,7 @@
 [project]
 name = "mle-refactoring-project"
 version = "0.1.0"
-requires-python = ">=3.13"
+requires-python = ">=3.13.17"
 dependencies = [
     "matplotlib>=3.11.1",
     "pandas>=3.0.5",
@@ -16,3 +16,8 @@ dev = [
     "ipykernel>=7.3.0",
     "nbformat>=5.11.1",
 ]
+
+[tool.uv]
+required-version = ">=0.13.5"
+# Apply certificate fixes without adding unused runtime packages.
+constraint-dependencies = ["certifi>=2026.10.19", "pip>=26.2.2"]
