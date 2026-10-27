@@ -125,3 +125,24 @@ The [bonus_solution/](bonus_solution/) folder contains a minimal working example
 - a `docker-compose.yaml` file to run the API and database together
 
 It is included as a reference implementation for the optional stretch task, not as a required project structure.
+
+
+
+## Project Reflection
+
+### Completed
+- Refactored data cleaning into reusable functions.
+- Refactored feature engineering into reusable functions.
+- Created a preprocessing pipeline.
+- Verified the refactored output matches the original notebook.
+- Added 7 passing unit tests.
+
+### Challenges
+- Resolving Python import errors in pytest.
+- Improving the performance of water distance calculations.
+- Handling pandas deprecation warnings.
+
+### With More Time
+- Refactor the machine learning modeling code.
+- Add more edge-case tests.
+- Improve preprocessing performance.
