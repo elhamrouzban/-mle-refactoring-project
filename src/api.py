@@ -50,8 +50,14 @@ def load_model():
 @app.post("/predict")
 def predict(features: HouseFeatures):
     try:
-        df = pd.DataFrame([features])
-        prediction = load_model().predict(df)[0]
+        df = pd.DataFrame([features.model_dump()])
+
+        model = load_model()
+        df = df[model.feature_names_in_]
+
+        prediction = model.predict(df)[0]
+
         return {"predicted_price": float(prediction)}
+
     except (ValueError, KeyError) as error:
         raise HTTPException(status_code=422, detail=str(error))
