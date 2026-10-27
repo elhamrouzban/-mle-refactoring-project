@@ -610,6 +610,7 @@ version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
     { name = "matplotlib" },
+    { name = "nbformat" },
     { name = "pandas" },
     { name = "plotly" },
     { name = "scikit-learn" },
@@ -626,6 +627,7 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "matplotlib", specifier = ">=3.11.1" },
+    { name = "nbformat", specifier = ">=5.11.1" },
     { name = "pandas", specifier = ">=3.0.5" },
     { name = "plotly", specifier = ">=7.0.0" },
     { name = "scikit-learn", specifier = ">=1.9.0" },
