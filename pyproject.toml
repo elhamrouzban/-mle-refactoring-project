@@ -1,3 +1,7 @@
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
 [project]
 name = "mle-refactoring-project"
 version = "0.1.0"
@@ -16,6 +20,7 @@ dependencies = [
 dev = [
     "ipykernel>=7.3.0",
     "nbformat>=5.11.1",
+    "pytest>=9.2.0",
 ]
 
 [tool.uv]
