@@ -3,6 +3,9 @@ import skops.io as sio
 from pydantic import BaseModel
 from functools import lru_cache
 
+from src.database import Base, engine
+from src.database_models import House
+
 import pandas as pd
 from fastapi import HTTPException
 
@@ -32,6 +35,8 @@ class HouseFeatures(BaseModel):
 
 
 app = FastAPI()
+
+Base.metadata.create_all(bind=engine)
 
 
 @app.get("/")
