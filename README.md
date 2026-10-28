@@ -146,3 +146,122 @@ It is included as a reference implementation for the optional stretch task, not 
 - Refactor the machine learning modeling code.
 - Add more edge-case tests.
 - Improve preprocessing performance.
+
+
+
+## Running with Docker
+
+This project uses Docker Compose to run two services:
+
+- **FastAPI:** Provides the machine learning prediction endpoint and house CRUD operations.
+- **PostgreSQL:** Stores house records in a database.
+
+### 1. Prerequisites
+
+Install Docker Desktop (or Docker Engine with Docker Compose) and Git.
+
+### 2. Clone the repository
+
+```bash
+git clone <YOUR_REPOSITORY_URL>
+cd mle-refactoring-project
+```
+
+### 3. Configure environment variables
+
+Create a `.env` file in the project root:
+
+```dotenv
+DATABASE_URL=postgresql+psycopg://postgres:postgres@localhost:5432/houses
+
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=postgres
+POSTGRES_DB=houses
+```
+
+The local `DATABASE_URL` is for running Python outside Docker. Docker Compose automatically configures the API container to connect to the PostgreSQL service using the hostname `db`.
+
+The sample credentials are intended for local development only.
+
+### 4. Start the application
+
+```bash
+docker compose up --build -d
+```
+
+This builds the FastAPI image and starts the FastAPI and PostgreSQL containers.
+
+### 5. Access the API
+
+Open Swagger documentation:
+
+http://localhost:8000/docs
+
+Available endpoints:
+
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | `/predict` | Predict a house price using the trained ML model |
+| POST | `/houses` | Create a new house record |
+| GET | `/houses` | Retrieve all houses |
+| GET | `/houses/{house_id}` | Retrieve a house by ID |
+| PUT | `/houses/{house_id}` | Update a house |
+| DELETE | `/houses/{house_id}` | Delete a house |
+
+The prediction endpoint requires 20 house features and returns a predicted price. Predictions are not stored in PostgreSQL.
+
+### 6. Check PostgreSQL
+
+To view stored houses:
+
+```bash
+docker compose exec db psql -U postgres -d houses -c "SELECT * FROM houses;"
+```
+
+### 7. Stop the application
+
+```bash
+docker compose down
+```
+
+This stops and removes the containers but preserves PostgreSQL data in its Docker volume.
+
+To restart:
+
+```bash
+docker compose up -d
+```
+
+### Troubleshooting
+
+Check container status:
+
+```bash
+docker compose ps
+```
+
+View API logs:
+
+```bash
+docker compose logs api --tail=50
+```
+
+View PostgreSQL logs:
+
+```bash
+docker compose logs db --tail=50
+```
+
+
+
+### Configure Environment Variables
+
+1. Copy the example environment file:
+
+   cp .env.example .env
+
+2. Open `.env` and replace the placeholder values with your own PostgreSQL credentials.
+
+3. Never commit `.env` to GitHub. It contains private credentials.
+
+4. Docker Compose automatically reads `.env` when starting the services.
